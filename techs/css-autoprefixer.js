@@ -4,21 +4,25 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = require('enb/lib/build-flow').create()
     .name('css-autoprefixer')
+    .defineRequiredOption('sourceTarget')
     .defineOption('browserSupport')
-    .defineOption('sourcemap')
-    .target('target', '?.css')
-    .useFileList("css")
-    .builder(function (cssFiles) {
-        var browserSupport = this._browserSupport;
-        var autoprefixerProcessor = browserSupport ? autoprefixer.apply(this, browserSupport) : autoprefixer;
-        return Vow
-            .all(cssFiles.map(function (file) {
-                return vowFs.read(file.fullname, 'utf8').then(function (css) {
-                    return autoprefixerProcessor.process(css).css;
-                });
-            }))
-            .then(function (contents) {
-                return contents.join('\n');
-            });
+    .target('destTarget', '?.css')
+    .useSourceText('sourceTarget')
+    .methods({
+        _getOptions: function () {
+            this._browserSupport = this.getOption('browserSupport', null);
+        },
+        _getPrefixer: function () {
+            this._autoprefixer = this._browserSupport ? autoprefixer.apply(this, this._browserSupport) : autoprefixer;
+            return this._autoprefixer;
+        },
+        _getPrefixedCss: function (source) {
+            var autoprefixer = this._getPrefixer();
+            return autoprefixer.process(source).css;
+        }
+    })
+    .builder(function (css) {
+        this._getOptions();
+        return this._getPrefixedCss(css);
     })
     .createTech();
