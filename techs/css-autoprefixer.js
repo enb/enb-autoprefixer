@@ -2,12 +2,9 @@ var Vow = require('vow');
 var vowFs = require('vow-fs');
 var autoprefixer = require('autoprefixer');
 
-module.exports = require('enb/lib/build-flow').create()
+module.exports = require('enb/techs/css').buildFlow()
     .name('css-autoprefixer')
-    .defineRequiredOption('sourceTarget')
     .defineOption('browserSupport')
-    .target('destTarget', '?.css')
-    .useSourceText('sourceTarget')
     .methods({
         _getOptions: function () {
             this._browserSupport = this.getOption('browserSupport', null);
@@ -21,8 +18,16 @@ module.exports = require('enb/lib/build-flow').create()
             return autoprefixer.process(source).css;
         }
     })
-    .builder(function (css) {
-        this._getOptions();
-        return this._getPrefixedCss(css);
+    .builder(function (cssFiles) {
+        var node = this.node;
+        var css = cssFiles.map(function (file) {
+            return '@import "' + node.relativePath(file.fullname) + '";';
+        }).join('\n');
+
+        return this._processCss(css, node.resolvePath(this._destTarget))
+            .then(function (css) {
+                this._getOptions();
+                return this._getPrefixedCss(css);
+            }, this);
     })
     .createTech();
