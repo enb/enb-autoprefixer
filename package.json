@@ -3,8 +3,6 @@
     "version": "0.1.0",
     "description": "autoprefixer tech for enb",
     "dependencies": {
-        "vow": "0.4.x",
-        "vow-fs": "0.3.x",
         "autoprefixer": "1.0.x"
     },
     "devDependencies": {
