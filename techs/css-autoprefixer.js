@@ -1,5 +1,3 @@
-var Vow = require('vow');
-var vowFs = require('vow-fs');
 var autoprefixer = require('autoprefixer');
 
 module.exports = require('enb/lib/build-flow').create()

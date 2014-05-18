@@ -1,33 +1,32 @@
 {
-    "name": "enb-autoprefixer",
-    "version": "0.1.0",
-    "description": "autoprefixer tech for enb",
-    "dependencies": {
-        "vow": "0.4.x",
-        "vow-fs": "0.3.x",
-        "autoprefixer": "1.0.x"
-    },
-    "devDependencies": {
-        "enb": "0.8.x",
-        "jscs": "1.2.x",
-        "jshint": "2.4.x"
-    },
-    "main": "techs/css-autoprefixer.js",
-    "scripts": {
-        "test": "make lint"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/isquariel/enb-autoprefixer.git"
-    },
-    "author": {
-        "name": "Sofya Ilinova",
-        "email":  "tavsophi@gmail.com"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/isquariel/enb-autoprefixer/issues"
-    },
-    "homepage": "https://github.com/isquariel/enb-autoprefixer"
+  "name": "enb-autoprefixer",
+  "version": "0.1.0",
+  "description": "autoprefixer tech for enb",
+  "dependencies": {
+    "enb": "~0.10.0",
+    "autoprefixer": "~1.0.20140213"
+  },
+  "devDependencies": {
+    "jscs": "~1.4.5",
+    "jshint": "~2.5.1"
+  },
+  "main": "techs/css-autoprefixer.js",
+  "scripts": {
+    "test": "make lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/enb-make/enb-autoprefixer.git"
+  },
+  "contributors": [
+    {
+      "name": "Sofya Ilinova",
+      "email": "tavsophi@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enb-make/enb-autoprefixer/issues"
+  },
+  "homepage": "https://github.com/enb-make/enb-autoprefixer"
 }
-
