@@ -15,12 +15,12 @@ module.exports = require('enb/lib/build-flow').create()
     })
     .methods({
         _getPrefixer: function () {
-            this._autoprefixer = this._browserSupport ? autoprefixer.apply(this, this._browserSupport) : autoprefixer;
-            return this._autoprefixer;
+            return this._autoprefixer || (this._autoprefixer = this._browserSupport ?
+                autoprefixer.apply(autoprefixer, this._browserSupport) :
+                autoprefixer);
         },
         _getPrefixedCss: function (source) {
-            var autoprefixer = this._getPrefixer();
-            return autoprefixer.process(source).css;
+            return this._getPrefixer().process(source).css;
         }
     })
     .builder(function (css) {
