@@ -7,9 +7,6 @@ module.exports = require('enb/lib/build-flow').create()
     .target('destTarget', '?.css')
     .useSourceText('sourceTarget')
     .methods({
-        _getOptions: function () {
-            this._browserSupport = this.getOption('browserSupport', null);
-        },
         _getPrefixer: function () {
             this._autoprefixer = this._browserSupport ? autoprefixer.apply(this, this._browserSupport) : autoprefixer;
             return this._autoprefixer;
@@ -20,7 +17,6 @@ module.exports = require('enb/lib/build-flow').create()
         }
     })
     .builder(function (css) {
-        this._getOptions();
         return this._getPrefixedCss(css);
     })
     .createTech();
