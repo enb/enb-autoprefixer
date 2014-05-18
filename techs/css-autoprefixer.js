@@ -1,5 +1,3 @@
-var Vow = require('vow');
-var vowFs = require('vow-fs');
 var autoprefixer = require('autoprefixer');
 
 module.exports = require('enb/lib/build-flow').create()
@@ -8,21 +6,24 @@ module.exports = require('enb/lib/build-flow').create()
     .defineOption('browserSupport')
     .target('destTarget', '?.css')
     .useSourceText('sourceTarget')
+    .needRebuild(function (cache) {
+        this._sourcePath = this.node.resolvePath(this._sourceTarget);
+        return cache.needRebuildFile('unprefixed-file', this._sourcePath);
+    })
+    .saveCache(function (cache) {
+        cache.cacheFileInfo('unprefixed-file', this._sourcePath);
+    })
     .methods({
-        _getOptions: function () {
-            this._browserSupport = this.getOption('browserSupport', null);
-        },
         _getPrefixer: function () {
-            this._autoprefixer = this._browserSupport ? autoprefixer.apply(this, this._browserSupport) : autoprefixer;
-            return this._autoprefixer;
+            return this._autoprefixer || (this._autoprefixer = this._browserSupport ?
+                autoprefixer.apply(autoprefixer, this._browserSupport) :
+                autoprefixer);
         },
         _getPrefixedCss: function (source) {
-            var autoprefixer = this._getPrefixer();
-            return autoprefixer.process(source).css;
+            return this._getPrefixer().process(source).css;
         }
     })
     .builder(function (css) {
-        this._getOptions();
         return this._getPrefixedCss(css);
     })
     .createTech();
