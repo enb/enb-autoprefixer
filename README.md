@@ -1,6 +1,6 @@
 enb-autoprefixer
 ================
-[![NPM version](https://badge.fury.io/js/enb-autoprefixer.png)](http://badge.fury.io/js/enb-autoprefixer) [![Dependency Status](https://david-dm.org/isquariel/enb-autoprefixer.png)](https://david-dm.org/isquariel/enb-autoprefixer) [![devDependency Status](https://david-dm.org/isquariel/enb-autoprefixer/dev-status.png)](https://david-dm.org/isquariel/enb-autoprefixer#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/enb-autoprefixer.png)](http://badge.fury.io/js/enb-autoprefixer) [![Dependency Status](https://david-dm.org/enb-make/enb-autoprefixer.png)](https://david-dm.org/enb-make/enb-autoprefixer) [![devDependency Status](https://david-dm.org/enb-make/enb-autoprefixer/dev-status.png)](https://david-dm.org/enb-make/enb-autoprefixer#info=devDependencies)
 
 [Autoprefixer](https://github.com/ai/autoprefixer) tech for [Enb](https://github.com/enb-make/enb)
 
