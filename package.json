@@ -4,7 +4,7 @@
   "description": "autoprefixer tech for enb",
   "dependencies": {
     "enb": "~0.10.0",
-    "autoprefixer": "~1.0.20140213"
+    "autoprefixer-core": "~3.0.0"
   },
   "devDependencies": {
     "jscs": "~1.4.5",
