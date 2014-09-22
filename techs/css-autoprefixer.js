@@ -1,4 +1,4 @@
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('autoprefixer-core');
 
 module.exports = require('enb/lib/build-flow').create()
     .name('css-autoprefixer')
@@ -8,7 +8,7 @@ module.exports = require('enb/lib/build-flow').create()
     .useSourceText('sourceTarget')
     .builder(function (css) {
         var autoprefixerInstance = this._browserSupport ?
-            autoprefixer.apply(autoprefixer, this._browserSupport) :
+            autoprefixer.apply(autoprefixer, {browsers: this._browserSupport}) :
             autoprefixer;
 
         return autoprefixerInstance.process(css).css;
