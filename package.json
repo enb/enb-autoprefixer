@@ -2,8 +2,8 @@
   "name": "enb-autoprefixer",
   "version": "0.1.2",
   "description": "autoprefixer tech for enb",
-  "dependencies": {
-    "enb": "~0.10.0",
+  "peerDependencies": {
+    "enb": "^0.13.11",
     "autoprefixer-core": "~3.0.0"
   },
   "devDependencies": {
