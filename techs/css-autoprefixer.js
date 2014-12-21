@@ -16,7 +16,7 @@ module.exports = require('enb/lib/build-flow').create()
 
         try {
             return autoprefixerInstance.process(css).css;
-        } catch(e) {
+        } catch (e) {
             throw new Error(e);
         }
     })
