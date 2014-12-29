@@ -1,6 +1,9 @@
 enb-autoprefixer
 ================
-[![NPM version](https://badge.fury.io/js/enb-autoprefixer.png)](http://badge.fury.io/js/enb-autoprefixer) [![Dependency Status](https://david-dm.org/enb-make/enb-autoprefixer.png)](https://david-dm.org/enb-make/enb-autoprefixer) [![devDependency Status](https://david-dm.org/enb-make/enb-autoprefixer/dev-status.png)](https://david-dm.org/enb-make/enb-autoprefixer#info=devDependencies)
+[![NPM version][npm-image]][npm-link]
+[![Dependency status][deps-image]][deps-link]
+[![Development Dependency status][devdeps-image]][devdeps-link]
+[![Peer Dependency status][peerdeps-image]][peerdeps-link]
 
 [Autoprefixer](https://github.com/postcss/autoprefixer) tech for [Enb](https://github.com/enb-make/enb)
 
@@ -20,3 +23,12 @@ nodeConfig.addTech([
   }
 ]);
 ```
+
+[npm-image]: https://img.shields.io/npm/v/enb-autoprefixer.svg?style=flat
+[npm-link]: https://npmjs.org/package/enb-autoprefixer
+[deps-image]: https://img.shields.io/david/enb-make/enb-autoprefixer.svg?style=flat
+[deps-link]: https://david-dm.org/enb-make/enb-autoprefixer
+[devdeps-image]: https://img.shields.io/david/dev/enb-make/enb-autoprefixer.svg?style=flat
+[devdeps-link]: https://david-dm.org/enb-make/enb-autoprefixer#info=devDependencies
+[peerdeps-image]: https://img.shields.io/david/peer/enb-make/enb-autoprefixer.svg?style=flat
+[peerdeps-link]: https://david-dm.org/enb-make/enb-autoprefixer#info=peerDependencies
