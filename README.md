@@ -2,7 +2,7 @@ enb-autoprefixer
 ================
 [![NPM version](https://badge.fury.io/js/enb-autoprefixer.png)](http://badge.fury.io/js/enb-autoprefixer) [![Dependency Status](https://david-dm.org/enb-make/enb-autoprefixer.png)](https://david-dm.org/enb-make/enb-autoprefixer) [![devDependency Status](https://david-dm.org/enb-make/enb-autoprefixer/dev-status.png)](https://david-dm.org/enb-make/enb-autoprefixer#info=devDependencies)
 
-[Autoprefixer](https://github.com/ai/autoprefixer) tech for [Enb](https://github.com/enb-make/enb)
+[Autoprefixer](https://github.com/postcss/autoprefixer) tech for [Enb](https://github.com/enb-make/enb)
 
 Usage: 
 ```js
