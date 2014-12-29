@@ -10,12 +10,12 @@ module.exports = require('enb/lib/build-flow').create()
     .target('destTarget', '?.css')
     .useSourceText('sourceTarget')
     .builder(function (css) {
-        var autoprefixerInstance = this._browserSupport ?
-            autoprefixer.apply(autoprefixer, {browsers: this._browserSupport}) :
-            autoprefixer;
+        var prefixer = autoprefixer({
+            browsers: this._browserSupport || autoprefixer.default
+        });
 
         try {
-            return autoprefixerInstance.process(css).css;
+            return prefixer.process(css).css;
         } catch (e) {
             throw new Error(e);
         }
