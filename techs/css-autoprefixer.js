@@ -14,6 +14,10 @@ module.exports = require('enb/lib/build-flow').create()
             autoprefixer.apply(autoprefixer, {browsers: this._browserSupport}) :
             autoprefixer;
 
-        return autoprefixerInstance.process(css).css;
+        try {
+            return autoprefixerInstance.process(css).css;
+        } catch (e) {
+            throw new Error(e);
+        }
     })
     .createTech();
