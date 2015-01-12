@@ -1,6 +1,6 @@
 {
   "name": "enb-autoprefixer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "autoprefixer tech for enb",
   "peerDependencies": {
     "enb": "^0.13.11",
