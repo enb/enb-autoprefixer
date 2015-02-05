@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "description": "autoprefixer tech for enb",
   "peerDependencies": {
-    "enb": "^0.13.11",
+    "enb": ">=0.13.11 <1.0.0",
     "autoprefixer-core": "~4.0.2"
   },
   "devDependencies": {
