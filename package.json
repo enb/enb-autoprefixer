@@ -2,6 +2,9 @@
   "name": "enb-autoprefixer",
   "version": "0.2.3",
   "description": "autoprefixer tech for enb",
+  "dependencies": {
+    "browserslist": "^0.3.3"
+  },
   "peerDependencies": {
     "enb": ">=0.13.11 <1.0.0",
     "autoprefixer-core": "~5.1.9"
