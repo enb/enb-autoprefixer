@@ -1,6 +1,6 @@
 {
   "name": "enb-autoprefixer",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "autoprefixer tech for enb",
   "dependencies": {
     "browserslist": "^0.3.3"
