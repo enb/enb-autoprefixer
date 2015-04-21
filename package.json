@@ -2,17 +2,23 @@
   "name": "enb-autoprefixer",
   "version": "0.2.3",
   "description": "autoprefixer tech for enb",
+  "dependencies": {
+    "browserslist": "^0.3.3"
+  },
   "peerDependencies": {
     "enb": ">=0.13.11 <1.0.0",
-    "autoprefixer-core": "~4.0.2"
+    "autoprefixer-core": "~5.1.9"
   },
   "devDependencies": {
+    "enb-validate-code": "0.0.1",
     "jscs": "~1.4.5",
     "jshint": "~2.5.1"
   },
   "main": "techs/css-autoprefixer.js",
   "scripts": {
-    "test": "make lint"
+    "test": "npm run jshint && npm run jscs",
+    "jshint": "node_modules/.bin/jshint .",
+    "jscs": "node_modules/.bin/jscs -c node_modules/enb-validate-code/jscs.json techs"
   },
   "repository": {
     "type": "git",
