@@ -1,6 +1,3 @@
-var autoprefixer = require('autoprefixer-core');
-var browserslist = require('browserslist');
-
 module.exports = require('enb/lib/build-flow').create()
     .name('css-autoprefixer')
     .defineRequiredOption('sourceTarget')
@@ -11,6 +8,10 @@ module.exports = require('enb/lib/build-flow').create()
     .target('destTarget', '?.css')
     .useSourceText('sourceTarget')
     .builder(function (css) {
+
+        var autoprefixer = require('autoprefixer-core');
+        var browserslist = require('browserslist');
+
         var prefixer = autoprefixer({
             browsers: this._browserSupport || browserslist.defaults
         });
@@ -20,5 +21,6 @@ module.exports = require('enb/lib/build-flow').create()
         } catch (e) {
             throw new Error(e);
         }
+
     })
     .createTech();
